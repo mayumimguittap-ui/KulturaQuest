@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KulturaQuest — explore Philippine visual arts, learn traditional techniques, and help preserve cultural heritage.">
+<title>KulturaQuest | Discover. Create. Preserve.</title>
+<style>
+:root{--ink:#24332f;--muted:#66756f;--cream:#fbf7ed;--paper:#fffdf8;--green:#315c4b;--green2:#477b63;--gold:#d9a441;--rust:#a94f37;--line:#e8e0d1;--shadow:0 12px 35px #263a3012}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--green)}button{font:inherit;cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#fbf7edeF;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;letter-spacing:.08em;color:var(--green);text-decoration:none;font-size:1.2rem}.brand span{color:var(--rust)}
+nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}nav a{text-decoration:none;font-size:.92rem;font-weight:650;color:var(--ink)}nav a:hover{color:var(--rust)}
+.menu{display:none;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:8px 12px}
+.hero{padding:76px 0 64px;background:linear-gradient(115deg,#f4ead6 0%,#f9f4e9 55%,#e5eee4 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.17em;color:var(--rust);font-size:.76rem;font-weight:800}
+h1{font:700 clamp(2.8rem,6vw,5.2rem)/1.02 Georgia,serif;letter-spacing:-.045em;margin:15px 0 18px;color:var(--green)}
+h2{font:700 clamp(2rem,4vw,3rem)/1.12 Georgia,serif;margin:0 0 12px;color:var(--green)}
+h3{font:700 1.25rem/1.25 Georgia,serif;margin:0 0 8px;color:var(--green)}
+.lead{font-size:1.15rem;max-width:620px;color:#465850}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:999px;padding:12px 20px;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--green);color:white}.primary:hover{background:#244638}.secondary{border:1px solid #9aaa9f;color:var(--green);background:#ffffff80}
+.art-frame{background:#e4d4b8;border-radius:28px;padding:14px;box-shadow:var(--shadow);transform:rotate(1.5deg)}.art-frame img{width:100%;height:340px;object-fit:cover;border-radius:18px;display:block}.art-note{font:italic 1rem Georgia,serif;padding:12px 8px 2px;color:#59675e}
+section{padding:72px 0}.section-head{max-width:720px;margin-bottom:30px}.section-head p{color:var(--muted);margin:8px 0 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}.card img{width:100%;height:190px;object-fit:cover;display:block;background:#e9e0cf}.card-body{padding:20px}.tag{display:inline-block;background:#edf2e9;color:var(--green);font-size:.74rem;font-weight:800;padding:4px 9px;border-radius:99px;margin-bottom:10px}.muted{color:var(--muted)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}.panel{background:#eaf0e8;border-radius:22px;padding:28px}.steps{padding-left:20px}.steps li{padding:5px 0}
+.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.feature{padding:14px;border:1px solid var(--line);border-radius:14px;background:#fffdf8}.feature b{display:block;color:var(--green)}
+.quiz{max-width:760px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}.quiz label{display:flex;gap:10px;padding:11px 13px;border:1px solid var(--line);border-radius:12px;margin:9px 0;cursor:pointer}.quiz label:hover{background:#f3f5ef}.quiz input{accent-color:var(--green)}.feedback{margin-top:14px;font-weight:700}
+.callout{background:var(--green);color:white;border-radius:24px;padding:34px;display:flex;justify-content:space-between;gap:25px;align-items:center}.callout h2{color:white}.callout p{color:#e5eee7;max-width:650px}
+footer{background:#213b31;color:#eaf0e8;padding:35px 0}.foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot a{color:#f1d28f}
+.notice{font-size:.88rem;background:#fff4d9;border-left:4px solid var(--gold);padding:13px 16px;border-radius:8px;color:#594b2e}
+.placeholder{border:1px dashed #b7a98e;background:#f8f1e4;border-radius:14px;padding:20px;color:#665b49}
+@media(max-width:800px){.hero-grid,.split{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.hero{padding:52px 0}.art-frame img{height:260px}}
+@media(max-width:580px){.cards,.feature-list{grid-template-columns:1fr}.menu{display:block}nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--cream);padding:18px 4%;border-bottom:1px solid var(--line)}nav.open{display:flex;flex-direction:column;align-items:flex-start}.callout{display:block}.callout .btn{margin-top:10px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home">KULTURA<span>QUEST</span></a>
+<button class="menu" id="menuBtn" aria-label="Open navigation">☰ Menu</button>
+<nav id="nav"><a href="#home">Home</a><a href="#gallery">Art Gallery</a><a href="#techniques">Techniques</a><a href="#heritage">Ilocos Heritage</a><a href="#quiz">Quiz</a><a href="#activities">Activities</a><a href="#references">References</a></nav>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid">
+<div><div class="eyebrow">Philippine Visual Arts · Cultural Learning</div>
+<h1>Discover.<br>Create.<br>Preserve.</h1>
+<p class="lead">Explore the stories, skills, and creativity behind Philippine traditional visual arts. Learn online, then bring what you discover to life through hands-on art-making.</p>
+<div class="actions"><a class="btn primary" href="#gallery">Explore the gallery</a><a class="btn secondary" href="#activities">Start an activity</a></div>
+<p class="muted" style="font-size:.9rem;margin-top:18px">A student-developed learning prototype by BCAEd – 3A.</p></div>
+<div class="art-frame"><img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1000&q=85" alt="Colorful woven textile detail"><div class="art-note">Traditional knowledge lives through practice and sharing.</div></div>
+</div></section>
+
+<section id="about"><div class="wrap split">
+<div><div class="eyebrow">About KulturaQuest</div><h2>Technology that supports tradition.</h2><p>KulturaQuest is a digital learning platform concept that complements—not replaces—traditional art education. It brings together cultural documentation, guided learning, creative exploration, and physical art-making.</p><p>Our focus is Philippine Visual Arts, with special attention to Ilocos Norte and the Ilocano community as reliable local resources become available.</p></div>
+<div class="panel"><h3>What you'll find here</h3><div class="feature-list">
+<div class="feature"><b>Explore</b><span class="muted">Artwork galleries and cultural stories</span></div><div class="feature"><b>Learn</b><span class="muted">Techniques, materials, and demonstrations</span></div><div class="feature"><b>Practice</b><span class="muted">Hands-on activities and worksheets</span></div><div class="feature"><b>Reflect</b><span class="muted">Quizzes and artwork analysis</span></div>
+</div></div></div></section>
+
+<section id="gallery" style="background:#f4efe4"><div class="wrap"><div class="section-head"><div class="eyebrow">01 · Explore</div><h2>Digital art gallery</h2><p>Begin with examples of Philippine visual expression. Replace or supplement these sample images with properly credited, locally verified works before public launch.</p></div>
+<div class="cards">
+<article class="card"><img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=800&q=80" alt="Woven textile detail"><div class="card-body"><span class="tag">Textile arts</span><h3>Weaving and patterns</h3><p class="muted">Observe how color, pattern, material, and technique communicate identity and design.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80" alt="Handmade ceramic pottery"><div class="card-body"><span class="tag">Clay and form</span><h3>Pottery and ceramics</h3><p class="muted">Explore how clay can be shaped into useful and expressive forms.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Art and craft materials"><div class="card-body"><span class="tag">Visual expression</span><h3>Drawing and painting</h3><p class="muted">Look closely at line, shape, color, texture, and composition.</p></div></article>
+</div></div></section>
+
+<section id="techniques"><div class="wrap"><div class="section-head"><div class="eyebrow">02 · Learn</div><h2>Traditional art techniques</h2><p>Use these learning prompts to organize your demonstrations. Add your group's own photographs or videos after documenting the process with permission.</p></div>
+<div class="cards">
+<article class="card"><div class="card-body"><span class="tag">Learning guide 01</span><h3>Observe the materials</h3><p>Identify the tools and materials used. What are they made from? Where do they come from? Are there safety considerations?</p></div></article>
+<article class="card"><div class="card-body"><span class="tag">Learning guide 02</span><h3>Study the process</h3><p>Break a technique into stages: preparation, making, finishing, and care. Record each stage with captions or approved images.</p></div></article>
+<article class="card"><div class="card-body"><span class="tag">Learning guide 03</span><h3>Understand the meaning</h3><p>Research the artwork's context and meaning. Confirm interpretations with reliable sources or knowledgeable practitioners.</p></div></article>
+</div><p class="notice" style="margin-top:22px">Content note: KulturaQuest should not present an unverified tutorial as an authentic traditional practice. Ask an artist, artisan, educator, or cultural knowledge holder to review locally specific information.</p>
+</div></section>
+
+<section id="heritage" style="background:#eaf0e8"><div class="wrap split">
+<div><div class="eyebrow">03 · Local focus</div><h2>Ilocos Norte heritage</h2><p>This section is reserved for documented local artworks, crafts, community practices, and artist stories from Ilocos Norte.</p><p>Build this page with material gathered from credible publications, museums, cultural institutions, interviews, and community partners.</p></div>
+<div class="placeholder"><b>Local collection — ready for your research</b><p>Add one verified entry for each local practice:</p><ul><li>Name of artwork or practice</li><li>Community or place associated with it</li><li>Materials and process</li><li>Artist / knowledge-holder attribution, if approved</li><li>Source, date, and permission details</li></ul><p style="margin-bottom:0">No local claims or artist profiles are published here until your group verifies them.</p></div>
+</div></section>
+
+<section id="quiz"><div class="wrap"><div class="section-head"><div class="eyebrow">04 · Check your learning</div><h2>KulturaQuest mini-quiz</h2><p>Try this sample question about visual analysis. Your group can expand this into a scored quiz using Google Forms.</p></div>
+<div class="quiz"><h3>Question 1 of 3 · Looking closely at art</h3><p><b>Which set contains elements of visual art?</b></p>
+<form id="quizForm">
+<label><input type="radio" name="q1" value="a"> A. Line, shape, color, texture</label>
+<label><input type="radio" name="q1" value="b"> B. Volume, speed, temperature, weight</label>
+<label><input type="radio" name="q1" value="c"> C. Date, location, price, owner</label>
+<button class="btn primary" type="submit">Check answer</button>
+</form><div class="feedback" id="feedback" aria-live="polite"></div></div>
+</div></section>
+
+<section id="activities" style="background:#f4efe4"><div class="wrap"><div class="section-head"><div class="eyebrow">05 · Create</div><h2>Hands-on art activities</h2><p>Digital exploration should lead to meaningful making. Choose an activity appropriate for your class, materials, and teacher's guidance.</p></div>
+<div class="cards">
+<article class="card"><div class="card-body"><span class="tag">Activity 01</span><h3>Artwork observation sheet</h3><p>Choose an artwork and record its subject, elements of art, materials, technique, context, and questions you still have.</p><a href="#references">See research and attribution reminders →</a></div></article>
+<article class="card"><div class="card-body"><span class="tag">Activity 02</span><h3>Pattern study</h3><p>Observe a documented pattern. Sketch your own original design inspired by what you learned, without copying culturally restricted designs.</p><a href="#references">See research and attribution reminders →</a></div></article>
+<article class="card"><div class="card-body"><span class="tag">Activity 03</span><h3>Traditional and digital comparison</h3><p>Create a small physical artwork, then make a digital study. Reflect on the materials, process, experience, and differences.</p><a href="#references">See research and attribution reminders →</a></div></article>
+</div></div></section>
+
+<section id="references"><div class="wrap split"><div><div class="eyebrow">06 · Be responsible</div><h2>Sources and acknowledgements</h2><p>Every artwork, quotation, historical statement, photograph, and artist profile added to KulturaQuest must have a source and appropriate permission or license.</p></div>
+<div class="panel"><h3>Before publishing content</h3><ul class="steps"><li>Record the author, title, source, and date accessed.</li><li>Check image copyright and reuse permissions.</li><li>Ask permission before publishing interview recordings, names, or photographs.</li><li>Respect community protocols and sensitive cultural knowledge.</li><li>Have an educator or appropriate cultural adviser review content.</li></ul><p class="muted">Add your actual bibliography and image credits here. Do not leave placeholder citations in the final school submission.</p></div></div></section>
+
+<section><div class="wrap"><div class="callout"><div><h2>Learn with your hands. Preserve with purpose.</h2><p>Explore, ask questions, create original work, and share what you learn with respect for the people and communities who sustain artistic traditions.</p></div><a class="btn secondary" href="#home">Back to top ↑</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><div><b>KULTURAQUEST</b><div>Discover. Create. Preserve.</div><small>Student learning prototype · BCAEd – 3A</small></div><div><small>Educational use · Verify and credit all cultural content before public release.</small></div></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.getElementById('quizForm').addEventListener('submit',e=>{
+ e.preventDefault(); const selected=new FormData(e.target).get('q1'); const out=document.getElementById('feedback');
+ if(!selected){out.textContent='Please choose an answer first.';out.style.color='#a94f37';return;}
+ if(selected==='a'){out.textContent='Correct! Line, shape, color, and texture are elements of visual art.';out.style.color='#315c4b';}
+ else{out.textContent='Not quite. Review the elements of visual art and try again.';out.style.color='#a94f37';}
+});
+</script>
+</body></html>
